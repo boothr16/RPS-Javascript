@@ -6,4 +6,6 @@ function computerPlay() {
     console.log(choices[rand]);
 }
 
-computerPlay();
+function singleRound(playerSelection, computerSelection) {
+    
+}
