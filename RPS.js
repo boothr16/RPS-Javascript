@@ -44,6 +44,10 @@ function playRound(userChoice, computerChoice) {
     }
 }
 
-let me = getUserChoice();
-let pc = computerPlay();
-playRound(me, pc);
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let me = getUserChoice();
+        let pc = computerPlay();
+        playRound(me, pc);
+    }
+}
