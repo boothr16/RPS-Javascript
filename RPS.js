@@ -18,26 +18,38 @@ function playRound(userChoice, computerChoice) {
         alert("Tie!");
     else {
         if (computerChoice == "rock") {
-            if (userChoice == "paper")
+            if (userChoice == "paper") {
                 alert("Player wins!");
-            else if (userChoice == "scissors")
+                return true;
+            }
+            else if (userChoice == "scissors"){
                 alert("PC wins!");
+                return false;                
+            }
             else
                 alert("Invalid input.");
         }
         else if (computerChoice == "paper") {
-            if (userChoice == "scissors")
+            if (userChoice == "scissors") {
                 alert("Player wins!");
-            else if (userChoice == "rock")
+                return true
+            }
+            else if (userChoice == "rock") {
                 alert("PC wins!");
+                return false
+            }
             else
                 alert("Invalid input.");            
         }
         else {
-            if (userChoice == "rock")
+            if (userChoice == "rock") {
                 alert("Player wins!");
-            else if (userChoice == "paper")
+                return true;
+            }
+            else if (userChoice == "paper") {
                 alert("PC wins!");
+                return false;
+            }
             else
                 alert("Invalid input.");            
         }
@@ -45,9 +57,22 @@ function playRound(userChoice, computerChoice) {
 }
 
 function game() {
+    playerScore = computerScore = 0;
     for (let i = 0; i < 5; i++) {
         let me = getUserChoice();
         let pc = computerPlay();
-        playRound(me, pc);
+        let playerWins = playRound(me, pc);
+        if (playerWins)
+            playerScore++;
+        else
+            computerScore++;
     }
+    if (playerScore > computerScore)
+        alert("Player wins the game!");
+    else if (playerScore < computerScore)
+        alert("PC wins the game!")
+    else
+        alert("The game is a tie!")
 }
+
+game()
