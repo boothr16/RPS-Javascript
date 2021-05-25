@@ -88,4 +88,3 @@ function disableButtons() {
         elem.disabled = true
     })
 }
-game()
