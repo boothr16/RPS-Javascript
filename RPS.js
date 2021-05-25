@@ -1,3 +1,5 @@
+const buttons = document.querySelectorAll('input')
+
 // randomly selects rock, paper, or scissors
 function computerPlay() {
     const choices = ["rock", "paper", "scissors"];
@@ -75,4 +77,15 @@ function game() {
         alert("The game is a tie!")
 }
 
+buttons.forEach(button =>{
+    button.addEventListener('click', function(){
+        playRound(button.value, computerPlay())
+    })
+})
+
+function disableButtons() {
+    buttons.forEach(elem => {
+        elem.disabled = true
+    })
+}
 game()
